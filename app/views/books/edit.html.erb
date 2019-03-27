@@ -1,0 +1,10 @@
+<h1>Editing Book</h1>
+
+<%= render 'form', book: @book %>
+
+
+<%= button_to "Book Detail", @book, :method => "get" %>
+<br>
+<%= button_to "New Book", new_book_path, :method => "get" %>
+<br>
+<%= button_to "Home Page", homepage_url, :method => "get" %>

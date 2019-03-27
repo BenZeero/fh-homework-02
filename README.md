@@ -1,118 +1,75 @@
-# Homework 2 - Building a simple Rails application
+# <Project Name>
 
-## Due Date
+<Project Description>
 
-TBD
+This app powers <Project Name> located [here](Heroku Project URL)
 
-## Goals
+## Getting Started
 
-- The purpose of this application is to build a simple book catalog application
-  with the following features:
+## Software requirements
 
-  - add book
+- Rails 5.0.0 or higher
 
-  - update book
+- Ruby 2.3.1 or higher
 
-  - delete book
+- PostgreSQL 9.5.x or higher
 
-  - list all books
+## Navigate to the Rails application
 
-  - show book details
+```
+$ cd /path/to/rails/application
+```
 
-  - search for book by [title, author, classification, genre, type]
+## Set configuration files
 
-## Readings and Resources
+```
+$ cp config/database.yml.template config/database.yml
+$ cp config/initializers/mail.rb.template config/initializers/mail.rb
+```
 
-Active Record Query Interface - http://guides.rubyonrails.org/active_record_querying.html
+Note:  You may need to edit the above files as necessary for your system.
 
-Generic Search Form - http://guides.rubyonrails.org/form_helpers.html#a-generic-search-form
+## Create the database
 
-Faker - https://github.com/stympy/faker
+ ```
+ $ pgstart
+ $ rake db:create
+ ```
 
-Seed File - http://www.xyzpub.com/en/ruby-on-rails/3.2/seed_rb.html
+## Migrating and seeding the database
 
-## Book model information
+```
+$ rake db:migrate
+$ rake db:seed
+```
 
-- The book model will hold information about our book and it should have the
-  following fields at a minimum:
+## Starting the local server
 
-  - title - string
+```
+$ rails server
 
-  - author - string
+   or
 
-  - genre - string
+$ rails s
+```
 
-  - classification - string
+## Production Deployment
 
-    possible options for classification
+  ```
+  $ git push heroku master
+  $ heroku run rake db:migrate
+  ```
 
-    - General Works - encyclopedias
-    - Philosophy, Psychology, Religion
-    - History - Auxiliary Sciences
-    - History (except American)
-    - General U.S. History
-    - Local U.S. History
-    - Geography, Anthropology, Recreation
-    - Social Sciences	U
-    - Political Science	V
-    - Law	Z - Bibliography and Library Science
-    - Education
-    - Music
-    - Fine Arts
-    - Language and Literature
-    - Science
-    - Medicine
-    - Agriculture
-    - Technology
-    - Military
-    - Naval Science
-    - Bibliography and Library Science
+## Support
 
-  - type - string
+Bug reports and feature requests can be filed with the rest for the Ruby on Rails project here:
 
-    possible options for type
+* [File Bug Reports and Features](https://github.com/<user-name>/<project-repo>/issues)
 
-    - Fiction
-    - Nonfiction
+## License
 
-  - year - integer
+<Project Name> is released under the [MIT license](https://mit-license.org).
 
-## Creating Rails API application
+## Copyright
 
-  $ rails new homework_02 -T -d postgresql
-  $ cd homework_02
-  $ git init
-  $ git add .
-  $ git commit -am 'Initial commit'
-  $ git checkout -b part-01-initial-app
-
-## Generate Fake Data
-
-- Use a Ruby gem called `faker` to generate 50 books
-
-  - add the logic to your `seeds.rb` file for creating the book models
-
-## Deliverables
-
-  - create a repo called `homework-02` on Github.com
-
-  - push changes to Github to the branch, `part-01-initial-app`
-
-    ```
-    $ git checkout part-01-initial-app
-    $ git push
-    ```
-
-  - merge changes into the master branch and push to Github
-
-    ```
-    $ git checkout master
-    $ git merge part-01-initial-app
-    $ git push
-    ```
-
-  - send me the link to your `part-01-initial-app` branch
-
-## Have Questions
-
-Please make a reasonable effort to complete the homework prior to our next session.  If you have any questions regarding this homework, please do send me a message via Slack.
+copyright:: (c) Copyright 2018 <First Name> <Last Name>. All Rights Reserved.
