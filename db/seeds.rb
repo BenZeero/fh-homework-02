@@ -14,8 +14,8 @@ require 'faker'
     title: Faker::Book.title ,
     author: Faker::Book.author ,
     genre: Faker::Book.genre ,
-    classification: Faker::Newitem.classification_name,
-    fiction_nonfiction: Faker::Newitem.type_name,
+    classification: Book.classifications.sample,
+    book_type: Book.book_types.sample,
     year: Faker::Number.between(1600, 2019)
    )
 end

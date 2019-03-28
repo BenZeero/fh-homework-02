@@ -28,12 +28,12 @@
 
   <div class="field">
     <%= form.label :classification %>
-    <%= form.select :classification, ['General Works', 'Encyclopedias','Philosophy','Psychology','Religion','History','Auxiliary Sciences','History (except American)','General U.S. History','Local U.S. History','Geography', 'Anthropology', 'Recreation','Social Sciences','Political Science','Law','Education','Music', 'Fine Arts', 'Language and Literature', 'Science','Medicine', 'Agriculture','Technology', 'Military', 'Naval Science', 'Bibliography','Library Science']%>
+    <%= form.select :classification, Book.classifications %>
   </div>
 
   <div class="field">
     <%= form.label 'Type' %>
-    <%= form.select :fiction_nonfiction, ['Fiction', 'Nonfiction'] %>
+    <%= form.select :book_type, Book.book_types %>
   </div>
 
   <div class="field">

@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  root 'books#index'
-  get '/search' => 'books#search', :as => 'search_book'
-  get '/new', to: 'books#new'
-  get '/homepage', to: 'books#index'
+  
   resources :books
+  root 'books#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
