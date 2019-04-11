@@ -1,5 +1,8 @@
 class Book < ApplicationRecord
 
+  has_many :authorships
+  has_many :authors, through: :authorships
+  
   def self.classifications
     [
       'General Works', 
@@ -38,5 +41,11 @@ class Book < ApplicationRecord
       'Nonfiction'
     ]
   end
-end
 
+
+
+  def author_info
+    authors.map(&:full_name).join(", ")
+  end
+  
+end

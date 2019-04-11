@@ -7,7 +7,12 @@ class BooksController < ApplicationController
     
     if params[:search].present?  
       @parameter = params[:search].downcase  
-      @books = Book.all.where("lower(title) LIKE :search OR lower(author) LIKE :search OR lower(genre) LIKE :search OR lower(classification) LIKE :search OR lower(book_type) LIKE :search", search: @parameter)        
+      @books = Book.all.where(
+        "lower(title) LIKE :search OR  
+        lower(genre) LIKE :search OR 
+        lower(classification) LIKE :search OR 
+        lower(book_type) LIKE :search", 
+        search: @parameter)        
     else  
       @books = Book.all
     end  
@@ -27,6 +32,8 @@ class BooksController < ApplicationController
   # GET /books/1/edit
   def edit
   end
+
+  
 
   # POST /books
   # POST /books.json
